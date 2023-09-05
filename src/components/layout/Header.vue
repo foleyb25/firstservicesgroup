@@ -10,9 +10,9 @@
             </div>
             <nav :class="{ 'margin-scrolled-style': !isScrolled, 'margin-not-scrolled-style': isScrolled  }">
                 <ul class="flex space-x-12">
-                    <li><a href="#/" class="text-white hover:underline">Home</a></li>
-                    <li><a href="#/about" class="text-white hover:underline">About</a></li>
-                    <li><a href="#/contact" class="text-white hover:underline">Contact</a></li>
+                    <li><router-link to="/" class="text-white hover:underline">Home</router-link></li>
+                    <li><router-link to="/about" class="text-white hover:underline">About</router-link></li>
+                    <li><router-link to="/contact" class="text-white hover:underline">Contact</router-link></li>
                 </ul>
             </nav>
 
