@@ -1,0 +1,1 @@
+import{_ as t,c,d as s,f as e}from"./index-94847bd0.js";const o={},l={id:"content-container",class:"absolute top-0 left-0 h-full w-full"},n=e("div",{class:"w-full h-full flex flex-col md:flex-row justify-center items-center"},[e("h1",{class:"text-white text-xl"},"Contact")],-1),a=[n];function f(r,_){return c(),s("div",l,a)}const d=t(o,[["render",f]]);export{d as default};
