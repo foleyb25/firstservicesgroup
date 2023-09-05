@@ -5,7 +5,7 @@
             <div class="w-full h-full flex flex-col md:flex-row justify-center items-center">
                 <div class="w-1/2 flex justify-center items-center">
                     <div class="w-3/4 aspect-square">
-                        <img :src=fsgLogo alt="" class="h-full aspect-square">
+                        <img :src=fsgLogo alt="" class="h-full aspect-square object-contain">
                     </div>
                 </div>
 
@@ -15,8 +15,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="content-container" class="top-0 left-0 h-full w-full">
             <div class="parallax"
                 :style="scenes[0].imageSrc ? `background-image: url(${scene.imageSrc});` : 'background-color: black;'">
                 <div class="z-[5] w-full h-full flex flex-col justify-start items-center text-white">

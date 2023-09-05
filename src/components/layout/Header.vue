@@ -2,6 +2,7 @@
     <Transition name="fade">
     <header :class="[{ 'bg-black': isScrolled }, 'fixed w-full top-0 left-0 z-50 transition duration-500']">
         <!-- Logo -->
+        <div id="notification banner" class="z-[100] w-full static top-0 left-0 bg-yellow-300 text-center">We are currently under development. Check back again soon for the complete First Services Group website</div>
         <div :class="{ 'center-style': !isScrolled }" class="relative flex w-full items-center justify-between bg-transparent">
             <!-- Navigation Links -->
             <div v-if=isScrolled class="h-32 aspect-square ml-8">
@@ -9,9 +10,9 @@
             </div>
             <nav :class="{ 'margin-scrolled-style': !isScrolled, 'margin-not-scrolled-style': isScrolled  }">
                 <ul class="flex space-x-12">
-                    <li><a href="/" class="text-white hover:underline">Home</a></li>
-                    <li><a href="/about" class="text-white hover:underline">About</a></li>
-                    <li><a href="/contact" class="text-white hover:underline">Contact</a></li>
+                    <li><a href="#/" class="text-white hover:underline">Home</a></li>
+                    <li><a href="#/about" class="text-white hover:underline">About</a></li>
+                    <li><a href="#/contact" class="text-white hover:underline">Contact</a></li>
                 </ul>
             </nav>
 

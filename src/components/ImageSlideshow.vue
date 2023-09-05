@@ -1,5 +1,5 @@
 <template>
-    <div class="relative h-screen overflow-hidden aspect-video">
+    <div class="relative h-screen w-screen overflow-hidden">
         <!-- Display current image -->
         <transition name="fade">
             <img :key="currentIndex" :src="images[currentIndex]" alt="Slideshow Image" class="w-full h-full object-cover absolute top-0 left-0">
