@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'ChunkFive';
+  src: url('/src/assets/fonts/chunk_five.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Marlboro';
+  src: url('/src/assets/fonts/marlboro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TexasBold';
+  src: url('/src/assets/fonts/texas_bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Fade transition */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s ease-in-out;
@@ -11,4 +32,8 @@
 }
 .fade-enter-to, .fade-leave-from {
   opacity: 1;
+}
+
+a {
+  font-family: "marlboro";
 }

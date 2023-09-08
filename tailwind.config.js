@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx,vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'texas': ['TexasBold'],
+        'marlboro': ["Marlboro"],
+        'chunkfive': ['ChunkFive']
+      }
+    }
   },
   plugins: [],
 }

@@ -15,12 +15,16 @@
 import { onMounted, onDeactivated, ref, reactive } from 'vue'
 import MountainsDesert from "/src/assets/images/mountains_desert.jpeg"
 import MountainsSnow from "/src/assets/images/mountains_snow.jpeg"
+import OrangeSky from "/src/assets/images/orange_sky.jpeg"
+import FlowerMeadow from "/src/assets/images/flower_meadow.jpeg"
 
 const interval = ref(5000);
 const currentIndex = ref(0)
 const images = reactive([
     MountainsDesert,
     MountainsSnow,
+    OrangeSky,
+    FlowerMeadow
 ])
 
 const nextImage = () => {
