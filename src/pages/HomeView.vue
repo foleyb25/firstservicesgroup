@@ -11,7 +11,7 @@
 
                 <div class="w-1/2 flex justify-center items-center">
                     <div class="w-3/4 text-center text-gray-300 text-xl">
-                        <p class="text-6xl font-marlboro">Veterans Helping Veterans</p>
+                        <p class="text-6xl">Veterans Helping Veterans</p>
                     </div>
                 </div>
             </div>

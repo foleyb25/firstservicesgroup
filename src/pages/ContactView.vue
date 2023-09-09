@@ -1,9 +1,9 @@
 <template>
-    <div id="content-container" class="absolute top-0 left-0 h-full w-full bg-gray-800 p-5">
+    <div id="content-container" class="absolute top-0 left-0 h-screen w-full bg-black p-5 font-marlboro">
          <div class="w-full h-full flex flex-col md:flex-row justify-center items-center mb-5">
              <h1 class="text-white text-3xl mb-4">Contact</h1>
          </div>
-         <form @submit.prevent="sendEmail()" class="bg-white p-6 rounded-md shadow-md">
+         <form v-if="!messageStatus" @submit.prevent="sendEmail()" class="bg-white p-6 rounded-md shadow-md">
              <div class="mb-4">
                  <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
                  <input v-model="email" type="email" id="email" placeholder="example@example.com" required class="mt-1 p-2 w-full border rounded-md">
@@ -20,10 +20,27 @@
                  <label for="message" class="block text-sm font-medium text-gray-600">Message</label>
                  <textarea v-model="message" id="message" rows="4" placeholder="Your message..." required class="mt-1 p-2 w-full border rounded-md"></textarea>
              </div>
+             <div class="mb-4 hidden">
+                 <label for="middle-name" class="block text-sm font-medium text-gray-600"></label>
+                 <textarea v-model="middleName" id="message" rows="4" placeholder="Your message..." class="mt-1 p-2 w-full border rounded-md"></textarea>
+             </div>
              <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
                  Send Email
              </button>
          </form>
+         <div v-else class="w-full flex justify-center">
+         <div  class="bg-green-100 p-6 rounded-md shadow-md w-1/2 m-48">
+            <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                    <h2 class="text-6xl font-semibold text-green-700">Success!</h2>
+                    <p class="text-2xl text-green-600">Your message has been sent. We'll get back to you soon!</p>
+                </div>
+            </div>
+</div>
+</div>
      </div>
  </template>
  
@@ -37,9 +54,11 @@ const fullName = ref("");
 const message = ref("");
 const subject = ref("");
 const messageStatus = ref(null);
+const middleName = ref(null);
 
 
 const sendEmail = async () => {
+    if(middleName?.value) return
     try {
         const mailStatus = await axios.post('https://allthingsgreat-api-prod-90e76e1469ed.herokuapp.com/api/v2/utility/sendEmail', {
             email: email.value,
@@ -48,7 +67,7 @@ const sendEmail = async () => {
             subject: subject.value,
         })
 
-        if(mailStatus) {
+        if(mailStatus.status === 200) {
             messageStatus.value = mailStatus
         }
 

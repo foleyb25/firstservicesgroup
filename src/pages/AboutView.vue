@@ -1,21 +1,6 @@
 <template>
-        <div id="content-container" class="absolute top-0 left-0 h-full w-full">
-            <div v-for="(scene, index) in scenes" :key="index">
-                <div 
-                    class="parallax" 
-                    :style="scene.imageSrc ? `background-image: url(${scene.imageSrc});` : 'background-color: black;'"
-                >
-                    <div class="z-[5] text-white flex flex-col md:flex-row">
-                        <div>
-                            <h1>{{ scene.sectionTitle }}</h1>
-                        </div>
-
-                        <div>
-                            <p>{{ scene.sectionText }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="content-container" class="absolute top-0 left-0 h-screen w-full font-marlboro bg-black text-white">
+        
         </div>
 </template>
 
