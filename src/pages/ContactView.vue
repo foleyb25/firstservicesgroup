@@ -24,7 +24,7 @@
                  <label for="middle-name" class="block text-sm font-medium text-gray-600"></label>
                  <textarea v-model="middleName" id="message" rows="4" placeholder="Your message..." class="mt-1 p-2 w-full border rounded-md"></textarea>
              </div>
-             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+             <button :disabled="processingRequest" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
                  Send Email
              </button>
          </form>
@@ -55,10 +55,12 @@ const message = ref("");
 const subject = ref("");
 const messageStatus = ref(null);
 const middleName = ref(null);
+const processingRequest = ref(false);
 
 
 const sendEmail = async () => {
     if(middleName?.value) return
+    processingRequest.value = true;
     try {
         const mailStatus = await axios.post('https://allthingsgreat-api-prod-90e76e1469ed.herokuapp.com/api/v2/utility/sendEmail', {
             email: email.value,
@@ -73,6 +75,8 @@ const sendEmail = async () => {
 
     } catch(e) {
         console.log(e.message)
+    } finally {
+        processingRequest.value = false
     }
 }
 
