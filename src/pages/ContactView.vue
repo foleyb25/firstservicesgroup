@@ -41,7 +41,7 @@ const messageStatus = ref(null);
 
 const sendEmail = async () => {
     try {
-        const mailStatus = await axios.post('http://localhost:8080/api/v2/utility/sendEmail', {
+        const mailStatus = await axios.post('https://allthingsgreat-api-prod-90e76e1469ed.herokuapp.com/api/v2/utility/sendEmail', {
             email: email.value,
             fullName: fullName.value,
             message: message.value,
