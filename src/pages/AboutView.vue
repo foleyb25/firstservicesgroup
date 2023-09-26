@@ -38,18 +38,6 @@
 
             </div>
         </div>
-        <div class="parallax parallax-white"
-            :style="FlowerMeadow ? `background-image: url(${FlowerMeadow});` : 'background-color: black;'">
-            <div class="z-[5] w-full h-full flex flex-col justify-start items-center text-white">
-
-
-                <div class="mt-48 text-black text-center">
-                    <h1 class="text-6xl">Our Story</h1>
-                    <p class="text-2xl p-24">Written summary...</p>
-                </div>
-
-            </div>
-        </div>
     </div>
 </template>
 

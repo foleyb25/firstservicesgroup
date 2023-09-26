@@ -36,17 +36,6 @@
 
                 </div>
             </div>
-            <div class="parallax"
-                :style="`background-image: url(${Sunset});`">
-                <div class="z-[5] w-full h-full flex flex-col justify-start items-center text-white">
-                    <div class="mt-8 text-center">
-                        <p class="text-xl"></p>
-                        <h1 class="text-6xl"></h1>
-                        <p class="text-2xl p-24"></p>
-                    </div>
-
-                </div>
-            </div>
             
             <!-- Add More Parallax containers here... -->
         </div>
